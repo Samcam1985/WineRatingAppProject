@@ -1,0 +1,39 @@
+.container{
+  align-items: center;
+  margin: 0 auto;
+
+
+}
+
+.wine{
+  margin: 5px;
+  padding: 2px;
+  border: 1px solid #ccc;
+  height:140px;
+}
+
+.information{
+  float: left;
+}
+
+.image{
+  width: 100px;
+  height: 100px;
+  margin: 15px;
+  float: left;
+}
+
+.actions{
+  float:right;
+  width:110px;
+  padding:2px;
+}
+
+p{
+  line-height: 12px;
+}
+
+button{
+  width:100px;
+  margin: 4px;
+}
