@@ -64,7 +64,7 @@ class Reviews extends React.Component {
           var reviews = data.map((review, index) => {
             return <div className="review" key={index}>
               <p>{review.content}</p>
-              <p>Rating: {review.rating } out of 5</p>
+              <p>Rating: {review.rating } out of 10</p>
             </div>;
           });
           ReactDOM.render(
@@ -82,14 +82,22 @@ class Reviews extends React.Component {
 
   render() {
     //console.log(this.state.wine);
+    var ratings = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+    var options = ratings.map((rating, index) => {
+      return <option value={rating} key={index}>{rating}</option>;
+    });
     return (
       <div>
         <div id="reviews" className="reviews"></div>
         <div className="review-new">
       <form onSubmit={this.handleSubmit}>
-            <input type="text" name="content" id="content" onChange={this.handleOnChangeContent}/>
+            <input type="text" name="content" placeholder="Please enter your review" id="content" onChange={this.handleOnChangeContent}/>
             <br />
-            <input type="text" name="rating" id="rating" onChange={this.handleOnChangeRating}/>
+            <select id="rating" onChange={this.handleOnChangeRating}>
+            <option value=''>Select Rating</option>
+              { options }
+            </select>
             
             <br />
             <input type="submit" value="Add Review"/>

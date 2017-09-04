@@ -49,6 +49,20 @@
   border: 1px solid #ccc;
 }
 
+.review-new{
+  background-color: red;
+  text-align: center;
+  width:100%;
+  padding: 2px;
+  height: 100px
+}
+
+.review-new input, select{
+  height:25px;
+  padding: 2px;
+  width:400px;
+}
+
 p{
   line-height: 12px;
 }
