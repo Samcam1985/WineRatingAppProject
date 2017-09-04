@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class WinesList extends React.Component {
   constructor(props) {
@@ -101,10 +102,13 @@ class WinesList extends React.Component {
         <p>{item.year}</p>
         </div>
         <div className="actions">
+
+        <Link to={{ pathname: '/reviews/' + item.id }}>Reviews</Link>
         <button onClick={() => {this.reviewItem(item.id)}}> Reviews</button>
         <button onClick={() => {this.deleteItem(item.id)}}>Delete</button>
         </div>
         </div>
+
         )
     );
 

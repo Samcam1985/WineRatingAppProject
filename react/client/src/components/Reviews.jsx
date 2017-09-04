@@ -5,15 +5,21 @@ class Reviews extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      wine: this.props.wine
+      wine: props.id
     };
   }
 
+
+
+
   render() {
-    console.log(this.state.wine);
+    //console.log(this.state.wine);
     return (
       <div className="reviews">
-      blsh blah
+        <form>
+          <textarea name="reviewText" />
+          <input type="submit" value="Add Review" />
+        </form>
       </div>
       )
   }

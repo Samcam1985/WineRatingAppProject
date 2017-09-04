@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Search from '../components/Search';
 import WinesList from '../components/WinesList';
 import Reviews from '../components/Reviews';
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 
 class Container extends React.Component {
@@ -45,7 +46,19 @@ class Container extends React.Component {
           );
 
         ReactDOM.render(
-          <WinesList ref={winesList => this.winesList = winesList} wines={this.state.wines} onReviewsClick={this.reviewItem} />, 
+
+            <BrowserRouter>
+            <Switch>
+                <Route exact path='/' render={(props) => (
+                  <WinesList ref={winesList => this.winesList = winesList} wines={this.state.wines} onReviewsClick={this.reviewItem} />
+                  )} />
+                <Route path='/reviews' render={(props) => (
+                  <Reviews wine={props.wine} />
+                )}/>
+              </Switch>
+            </BrowserRouter>
+
+          , 
           document.getElementById('winesList')
           );
       }
