@@ -3,13 +3,36 @@ import React from 'react';
 class WinesList extends React.Component {
   constructor(props) {
     super(props);
+    this.reload = this.reload.bind(this);
+    this.reviewItem = this.reviewItem.bind(this);
     this.state = {
-      wines: []
+      wines: this.props.wines
     };
   }
 
+  reload(filtered){
+    this.setState({wines: filtered});
+  }
+
   componentDidMount() {
-    this.WinesList();
+
+  }
+
+  reviewItem(id) {
+      console.log(id);
+      var url = 'http://localhost:5000/wines/' + id;
+      var request = new XMLHttpRequest()
+      request.open('GET', url)
+
+      request.setRequestHeader('Content-Type', "application/json");
+
+      request.onload = () => {
+        if(request.status === 200){
+          //call back to the container to load the reviews for this wine.
+          this.props.onReviewsClick(request.responseText);
+        }
+      }
+      request.send();
   }
 
   deleteItem(id) {
@@ -63,51 +86,32 @@ class WinesList extends React.Component {
     request.send(JSON.stringify(body))
   }
 
-  WinesList() {
-    var url = 'http://localhost:5000/wines'
-    var request = new XMLHttpRequest()
-    request.open('GET', url)
-
-    request.setRequestHeader('Content-Type', "application/Json")
-    // request.withCredentials = false
-
-    request.onload = () => {
-      if(request.status === 200){
-        console.log("request: ", request.responseText)
-        var data = JSON.parse(request.responseText)
-        this.setState ( { wines: data })
-      }
-    }
-    request.send(null)
-  }
-
   render() {
-    console.log('http://localhost:5000/wines')
-    console.log(this.state.wines);
-    const eachNew = this.state.wines.map((item, index) => {
-      return (
+   
+    const eachNew = this.state.wines.map((item, index) => 
+       (
         <div className="wine" key={index}>
-          <div className="image">
-            <img width="100px" height="100px" src={"http://localhost:5000/images/"+item.image}/>
-          </div>
-          <div className="information">
-            <p>{item.name}</p>
-            <p>{item.colour}</p>
-            <p>{item.country}</p>
-            <p>{item.year}</p>
-          </div>
-          <div className="actions">
-          <button onClick={() => {this.deleteItem(item.id)}}> Reviews</button>
-            <button onClick={() => {this.deleteItem(item.id)}}>Delete</button>
-          </div>
+        <div className="image">
+        <img width="100px" height="100px" src={"http://localhost:5000/images/"+item.image}/>
+        </div>
+        <div className="information">
+        <p>{item.name}</p>
+        <p>{item.colour}</p>
+        <p>{item.country}</p>
+        <p>{item.year}</p>
+        </div>
+        <div className="actions">
+        <button onClick={() => {this.reviewItem(item.id)}}> Reviews</button>
+        <button onClick={() => {this.deleteItem(item.id)}}>Delete</button>
+        </div>
         </div>
         )
-    });
+    );
 
     return (
-      <div className="container">
-      <h1>{this.props.name}</h1>
-      { eachNew}
+      <div className="">
+      
+      { eachNew }
       </div>
       // <p><button onClick={() => {this.addItem(item.id)}}>Add</button></p>
       )

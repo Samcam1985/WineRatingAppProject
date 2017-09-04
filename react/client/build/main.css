@@ -29,6 +29,19 @@
   padding:2px;
 }
 
+.search-component{
+  height:80px;
+  width:100%;
+  margin: 0 auto;
+  text-align:center;
+}
+
+.search-component input{
+  height:25px;
+  padding: 2px;
+  width:400px;
+}
+
 p{
   line-height: 12px;
 }

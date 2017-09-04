@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Container from './containers/Container'
 
-import WinesList from './components/WinesList'
 
 window.onload = function(){
   ReactDOM.render(
-    <WinesList/>,
+    <Container />,
     document.getElementById('app')
   );
 }
