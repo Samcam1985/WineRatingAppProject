@@ -52,8 +52,8 @@ class Container extends React.Component {
                 <Route exact path='/' render={(props) => (
                   <WinesList ref={winesList => this.winesList = winesList} wines={this.state.wines} onReviewsClick={this.reviewItem} />
                   )} />
-                <Route path='/reviews' render={(props) => (
-                  <Reviews wine={props.wine} />
+                <Route path='/reviews/:id' render={(props) => (
+                  <Reviews wine={props.match.params.id} />
                 )}/>
               </Switch>
             </BrowserRouter>
