@@ -26,7 +26,7 @@ class Reviews extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const url = 'http://localhost:5000/reviews';
+    const url = 'http://localhost:5000/reviews/';
     const request = new XMLHttpRequest()
     request.open('POST', url)
 
@@ -50,7 +50,7 @@ class Reviews extends React.Component {
   }
 
   componentDidMount() {
-    var url = 'http://localhost:5000/reviews';
+    var url = 'http://localhost:5000/reviews/' + this.state.wine;
     var request = new XMLHttpRequest()
     request.open('GET', url)
 
@@ -60,20 +60,20 @@ class Reviews extends React.Component {
       if(request.status === 200){
 
         var data = JSON.parse(request.responseText);
-        console.log(data[0]);
-
-        var reviews = data.map((review, index) => {
-          return <div className="review" key={index}>
-            <p>{review.content}</p>
-            <p>Rating: {review.rating } out of 5</p>
-          </div>;
-        });
-        ReactDOM.render(
-          <div>
-          {reviews}
-          </div>,
-          document.getElementById('reviews')
-          );
+        if(data != null){
+          var reviews = data.map((review, index) => {
+            return <div className="review" key={index}>
+              <p>{review.content}</p>
+              <p>Rating: {review.rating } out of 5</p>
+            </div>;
+          });
+          ReactDOM.render(
+            <div>
+            {reviews}
+            </div>,
+            document.getElementById('reviews')
+            );
+        }
       }
     }
     request.send();
