@@ -9,7 +9,20 @@ class Reviews extends React.Component {
     };
   }
 
+  componentDidMount() {
+    var url = 'http://localhost:5000/reviews';
+    var request = new XMLHttpRequest()
+    request.open('GET', url)
 
+    request.setRequestHeader('Content-Type', "application/json");
+
+    request.onload = () => {
+      if(request.status === 200){
+        console.log("here");
+      }
+    }
+    request.send();
+  }
 
 
   render() {
