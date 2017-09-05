@@ -1,6 +1,15 @@
 body{
   color: black;
-  background-color: grey;
+  background-color: #800020 ;
+}
+
+.header {
+  background: url("/images/WineHeader.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 200px;
+  width: 50%;
+  margin: 0 auto;
 }
 
 div .wine {
@@ -8,9 +17,28 @@ div .wine {
   width: 50%;
   margin: 0 auto;
   border: 1px solid black;
+  margin-bottom: 10px;
 
 }
 
+.wine-add {
+  margin: 0 auto;
+  width: 50%;
+  text-align: center;
+}
+
+.wine-add input, select {
+  height:25px;
+  padding: 2px;
+  width:400px;
+  margin: 5px;
+}
+
+h2 {
+  font-family: verdana;
+  text-align: center;
+  color: white;
+}
 
 
 .container{
@@ -45,8 +73,8 @@ div .wine {
 }
 
 .search-component{
-  height:80px;
-  width:100%;
+  height:120px;
+  width:50%;
   margin: 0 auto;
   text-align:center;
 }
@@ -77,14 +105,12 @@ p{
 
 h1 {
   text-align: center;
-  background: url("/images/WineHeader.jpeg");
-  background-position: 0% 50%;
-  background-repeat: no-repeat;
-  background-position: center;
   line-height: 100px;
   display: block;
   color: white;
 }
+
+
 
 button{
   width:100px;

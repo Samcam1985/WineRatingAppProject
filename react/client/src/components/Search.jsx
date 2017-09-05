@@ -15,6 +15,7 @@ class Search extends React.Component {
   render() {
     return(
       <div className="search-component">
+      <hr/><h2>Wine Search</h2>
       <Autocomplete
         inputProps={{ placeholder: 'Please type a name, colour or country of wine...' }}
         getItemValue={(item) => item.name}

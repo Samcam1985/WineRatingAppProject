@@ -45,54 +45,54 @@ class WinesList extends React.Component {
   }
 
   reviewItem(id) {
-      console.log(id);
-      var url = 'http://localhost:5000/wines/' + id;
-      var request = new XMLHttpRequest()
-      request.open('GET', url)
+    console.log(id);
+    var url = 'http://localhost:5000/wines/' + id;
+    var request = new XMLHttpRequest()
+    request.open('GET', url)
 
-      request.setRequestHeader('Content-Type', "application/json");
+    request.setRequestHeader('Content-Type', "application/json");
 
-      request.onload = () => {
-        if(request.status === 200){
+    request.onload = () => {
+      if(request.status === 200){
           //call back to the container to load the reviews for this wine.
           this.props.onReviewsClick(request.responseText);
         }
       }
       request.send();
-  }
-
-  deleteItem(id) {
-    console.log(id)
-    var url = 'http://localhost:5000/wines/' + id
-    var request = new XMLHttpRequest()
-    request.open('DELETE', url)
-    request.setRequestHeader('Content-Type', "application/json")
-
-    request.onload = () => {
-      if(request.status === 200){
-        for(var i = 0; i< this.state.wines.length; i++) {
-          let item = this.state.wines[i]
-          if(item.id === id){
-            this.state.wines.splice(i, 1)
-            this.setState({
-              wines: this.state.wines
-            })
-            return
-          }
-        }
-
-      }
     }
-    request.send()
 
-  }
+    deleteItem(id) {
+      console.log(id)
+      var url = 'http://localhost:5000/wines/' + id
+      var request = new XMLHttpRequest()
+      request.open('DELETE', url)
+      request.setRequestHeader('Content-Type', "application/json")
 
-  handleAddWine() {
-    var url = 'http://localhost:5000/wines'
-    var request = new XMLHttpRequest()
-    request.open('POST', url)
+      request.onload = () => {
+        if(request.status === 200){
+          for(var i = 0; i< this.state.wines.length; i++) {
+            let item = this.state.wines[i]
+            if(item.id === id){
+              this.state.wines.splice(i, 1)
+              this.setState({
+                wines: this.state.wines
+              })
+              return
+            }
+          }
 
-    request.setRequestHeader('Content-Type', "application/json")
+        }
+      }
+      request.send()
+
+    }
+
+    handleAddWine() {
+      var url = 'http://localhost:5000/wines'
+      var request = new XMLHttpRequest()
+      request.open('POST', url)
+
+      request.setRequestHeader('Content-Type', "application/json")
     // request.withCredentials = false
 
     request.onload = () => {
@@ -114,35 +114,38 @@ class WinesList extends React.Component {
 
   render() {
 
-   
+
     const eachNew = this.state.wines.map((item, index) => 
-       (
+     (
 
-        <div className="wine" key={index}>
-        <div className="image">
-        <img width="100px" height="100px" src={"http://localhost:5000/images/"+item.image}/>
-        </div>
-        <div className="information">
-        <p>{item.name}</p>
-        <p>{item.colour}</p>
-        <p>{item.country}</p>
-        <p>{item.year}</p>
-        </div>
-        <div className="actions">
+      <div className="wine" key={index}>
+      <div className="image">
+      <img width="100px" height="100px" src={"http://localhost:5000/images/"+item.image}/>
+      </div>
+      <div className="information">
+      <p>{item.name}</p>
+      <p>{item.colour}</p>
+      <p>{item.country}</p>
+      <p>{item.year}</p>
+      </div>
+      <div className="actions">
 
-        <Link to={{ pathname: '/reviews/' + item.id }}>Reviews</Link>
-        <button onClick={() => {this.deleteItem(item.id)}}>Delete</button>
-        </div>
-        </div>
+      <Link to={{ pathname: '/reviews/' + item.id }}>Reviews</Link>
+      <button onClick={() => {this.deleteItem(item.id)}}>Delete</button>
+      </div>
+      </div>
 
-        )
-    );
+      )
+     );
 
     return (
 
       <div className="">
       
       { eachNew }
+  
+      <div className="wine-add">
+      <hr/><h2>Add a New Wine</h2>
       <form onSubmit={this.handleAddWine}>
       <input type="text" placeholder="Please enter Name of wine" onChange={this.handleOnChangeName}/>
       <br />
@@ -156,8 +159,9 @@ class WinesList extends React.Component {
       <br />
       <input type="text" placeholder="Please enter the year of the wine" onChange={this.handleOnChangeYear}/>
       <br /> 
-          <button type="submit">Add a new Wine</button>
+      <button type="submit">Add a new Wine</button>
       </form>
+      </div>
       </div>
       // <p><button onClick={() => {this.addItem(item.id)}}>Add</button></p>
       )
