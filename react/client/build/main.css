@@ -18,7 +18,13 @@ div .wine {
   margin: 0 auto;
   border: 1px solid black;
   margin-bottom: 10px;
+  box-shadow: 2px 2px 15px black;
 
+}
+
+button a {
+  text-decoration: none;
+  color: black;
 }
 
 .wine-add {

@@ -130,7 +130,7 @@ class WinesList extends React.Component {
       </div>
       <div className="actions">
 
-      <Link to={{ pathname: '/reviews/' + item.id }}>Reviews</Link>
+      <button><Link to={{ pathname: '/reviews/' + item.id }}>Reviews</Link></button>
       <button onClick={() => {this.deleteItem(item.id)}}>Delete</button>
       </div>
       </div>
