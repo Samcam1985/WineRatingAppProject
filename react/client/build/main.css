@@ -5,6 +5,10 @@ body{
 
 div .wine {
   background-color: white;
+  width: 50%;
+  margin: 0 auto;
+  border: 1px solid black;
+
 }
 
 
@@ -69,6 +73,17 @@ div .review {
 
 p{
   line-height: 12px;
+}
+
+h1 {
+  text-align: center;
+  background: url("/images/WineHeader.jpeg");
+  background-position: 0% 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  line-height: 100px;
+  display: block;
+  color: white;
 }
 
 button{

@@ -7,7 +7,7 @@ Wine.create!(
         colour: "White",
         country: "France",
         year: "2016" ,
-        image: "placeholder.jpg",
+        image: "ChâteauLouvignesGaillac.jpg",
     }
 )
 
@@ -17,7 +17,7 @@ Wine.create!(
         colour: "White",
         country: "France",
         year: "2016",
-        image: "placeholder.jpg",
+        image: "TescoFinestCôtesdeGascogne.jpg",
     }
 )
 
@@ -27,7 +27,7 @@ Wine.create!(
         colour: "White",
         country: "Italy",
         year: "2016",
-        image: "placeholder.jpg",
+        image: "MarksSpencer Falanghina Beneventano IGT.jpg",
     
     }
 )
@@ -36,8 +36,8 @@ Wine.create!(
         name: "Morrisons Grüner Veltliner",
         colour: "White",
         country: "Austria",
-        year: "2016",
-        image: "placeholder.jpg",
+        year: "2013",
+        image: "MorrisonsGrünerVeltliner.jpg",
         
     }
 )
@@ -157,7 +157,7 @@ Wine.create!(
         colour: "Red",
         country: "French",
         year: "2015",
-        image: "placeholder.jpg",
+        image: "BouchardPèreetFils.jpg",
     }
 )
 Wine.create!(
