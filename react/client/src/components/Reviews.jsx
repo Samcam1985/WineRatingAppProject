@@ -90,10 +90,11 @@ class Reviews extends React.Component {
             <input type="text" name="content" id="content" placeholder="Please enter Name of wine" onChange={this.handleOnChangeContent}/>
             <br />
             <select type="text" name="rating" id="rating" onChange={this.handleOnChangeRating}/>
-            
-            
             <br />
-            <input type="submit" value="Add Review"/>
+            <input type="submit" value="Add Review"/>   
+          </form>
+          <form method="get" action="/">
+              <button type="submit">Back</button>
           </form>
         </div>
       </div>

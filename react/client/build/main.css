@@ -7,10 +7,7 @@ div .wine {
   background-color: white;
 }
 
-div .review {
-  background-color: white;
-  padding: 2px:;
-}
+
 
 .container{
   align-items: center;
@@ -61,6 +58,13 @@ div .review {
   padding:10px;
   margin:0 auto;
   border: 1px solid #ccc;
+  background-color: white;
+}
+
+div .review {
+  
+  padding: 10px;
+ 
 }
 
 p{
