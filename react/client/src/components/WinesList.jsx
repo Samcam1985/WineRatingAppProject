@@ -6,9 +6,34 @@ class WinesList extends React.Component {
     super(props);
     this.reload = this.reload.bind(this);
     this.reviewItem = this.reviewItem.bind(this);
+    this.handleOnChangeName = this.handleOnChangeName.bind(this);
+    this.handleOnChangeColour = this.handleOnChangeColour.bind(this);
+    this.handleOnChangeCountry = this.handleOnChangeCountry.bind(this);
+    this.handleOnChangeYear = this.handleOnChangeYear.bind(this);
+    this.handleAddWine = this.handleAddWine.bind(this);
     this.state = {
-      wines: this.props.wines
+      wines: this.props.wines,
+      name: "",
+      colour: "",
+      country: "",
+      year: ""
     };
+  }
+
+  handleOnChangeName(event) {
+    this.setState({name: event.target.value});
+  }
+
+  handleOnChangeColour(event) {
+    this.setState({colour: event.target.value});
+  }
+
+  handleOnChangeCountry(event) {
+    this.setState({country: event.target.value});
+  }
+
+  handleOnChangeYear(event) {
+    this.setState({year: event.target.value});
   }
 
   reload(filtered){
@@ -62,7 +87,7 @@ class WinesList extends React.Component {
 
   }
 
-  addItem() {
+  handleAddWine() {
     var url = 'http://localhost:5000/wines'
     var request = new XMLHttpRequest()
     request.open('POST', url)
@@ -78,13 +103,13 @@ class WinesList extends React.Component {
       }
     }
     const body = {
-      name: " ",
-      colour: " ",
-      country: " ",
-      year: " ",
-      image: " "
+      name: this.state.name,
+      colour: this.state.colour,
+      country: this.state.country,
+      year: this.state.year,
+      image: "placeholder.jpg"
     }
-    request.send(JSON.stringify(body))
+    request.send(JSON.stringify(body));
   }
 
   render() {
@@ -118,6 +143,21 @@ class WinesList extends React.Component {
       <div className="">
       
       { eachNew }
+      <form onSubmit={this.handleAddWine}>
+      <input type="text" placeholder="Please enter Name of wine" onChange={this.handleOnChangeName}/>
+      <br />
+      <select type="text" id="colour" onChange={this.handleOnChangeColour}>
+      <option value="red">Red</option>
+      <option value="white">White</option>
+      <option value="rose">Rose</option>
+      </select>
+      <br />
+      <input type="text" placeholder="Please enter the country of the wine" onChange={this.handleOnChangeCountry}/>
+      <br />
+      <input type="text" placeholder="Please enter the year of the wine" onChange={this.handleOnChangeYear}/>
+      <br /> 
+          <button type="submit">Add a new Wine</button>
+      </form>
       </div>
       // <p><button onClick={() => {this.addItem(item.id)}}>Add</button></p>
       )
