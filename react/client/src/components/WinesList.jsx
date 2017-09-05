@@ -104,7 +104,6 @@ class WinesList extends React.Component {
         <div className="actions">
 
         <Link to={{ pathname: '/reviews/' + item.id }}>Reviews</Link>
-        <button onClick={() => {this.reviewItem(item.id)}}> Reviews</button>
         <button onClick={() => {this.deleteItem(item.id)}}>Delete</button>
         </div>
         </div>
