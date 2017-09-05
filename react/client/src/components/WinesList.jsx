@@ -88,9 +88,11 @@ class WinesList extends React.Component {
   }
 
   render() {
+
    
     const eachNew = this.state.wines.map((item, index) => 
        (
+
         <div className="wine" key={index}>
         <div className="image">
         <img width="100px" height="100px" src={"http://localhost:5000/images/"+item.image}/>
@@ -112,6 +114,7 @@ class WinesList extends React.Component {
     );
 
     return (
+
       <div className="">
       
       { eachNew }

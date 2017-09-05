@@ -1,3 +1,17 @@
+body{
+  color: black;
+  background-color: grey;
+}
+
+div .wine {
+  background-color: white;
+}
+
+div .review {
+  background-color: white;
+  padding: 2px:;
+}
+
 .container{
   align-items: center;
   margin: 0 auto;
