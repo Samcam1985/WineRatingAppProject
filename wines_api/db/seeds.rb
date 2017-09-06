@@ -27,7 +27,7 @@ Wine.create!(
         colour: "White",
         country: "Italy",
         year: "2016",
-        image: "MarksSpencer Falanghina Beneventano IGT.jpg",
+        image: "MarksSpencerFalanghinaBeneventanoIGT.jpeg",
     
     }
 )
@@ -47,7 +47,7 @@ Wine.create!(
         colour: "White",
         country: "Uruguay",
         year: "2016",
-        image: "placeholder.jpg",
+        image: "Bodega Garzón Colinas de Uruguay Albariño.jpg",
         
     }
 )
