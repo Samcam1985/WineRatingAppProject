@@ -20,6 +20,8 @@ class ReviewsController < ApplicationController
       rating: params[:rating],
       wine_id: params[:wine_id]
       })
-    render :json => review, status: :created
+
+    reviews = Review.all.where("wine_id = #{params[:wine_id]}")
+    render :json => reviews, status: :created
 end
 end

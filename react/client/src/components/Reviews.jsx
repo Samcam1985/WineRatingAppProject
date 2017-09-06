@@ -8,6 +8,7 @@ class Reviews extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleOnChangeContent = this.handleOnChangeContent.bind(this)
     this.handleOnChangeRating = this.handleOnChangeRating.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
     this.state = {
       wine: props.wine,
       content:"",
@@ -37,6 +38,18 @@ class Reviews extends React.Component {
       if(request.status === 201){
         var data = JSON.parse(request.responseText);
         console.log(data[0]);
+        var reviews = data.map((review, index) => {
+          return <div className="review" key={index}>
+            <p>{review.content}</p>
+            <p>Rating: {review.rating } out of 5</p>
+          </div>;
+        });
+        ReactDOM.render(
+          <div>
+          {reviews}
+          </div>,
+          document.getElementById('reviews')
+          );
       }
     }
 
@@ -86,6 +99,7 @@ class Reviews extends React.Component {
       <div>
         <div id="reviews" className="reviews"></div>
         <div className="review-new">
+        <hr/><h2>Add a New Review</h2>
       <form onSubmit={this.handleSubmit}>
             <input type="text" name="content" id="content" placeholder="Please enter Name of wine" onChange={this.handleOnChangeContent}/>
             <br />
