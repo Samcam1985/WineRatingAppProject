@@ -150,7 +150,6 @@ class WinesList extends React.Component {
       <input type="text" placeholder="Please enter Name of wine" onChange={this.handleOnChangeName}/>
       <br />
       <select type="text" id="colour" onChange={this.handleOnChangeColour}>
-      <option placeholder="Please select a colour">Please select a Wine Colour</option>
       <option value="red">Red</option>
       <option value="white">White</option>
       <option value="rose">Rose</option>

@@ -90,7 +90,6 @@ class Reviews extends React.Component {
             <input type="text" name="content" id="content" placeholder="Please enter Name of wine" onChange={this.handleOnChangeContent}/>
             <br />
             <select type="text" name="rating" id="rating" onChange={this.handleOnChangeRating}>
-            <option placeholder="Please select a Rating">Please select a Rating</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
