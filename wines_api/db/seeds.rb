@@ -47,7 +47,7 @@ Wine.create!(
         colour: "White",
         country: "Uruguay",
         year: "2016",
-        image: "Bodega Garzón Colinas de Uruguay Albariño.jpg",
+        image: "chorizoalvinoblanco.png",
         
     }
 )
@@ -57,7 +57,7 @@ Wine.create!(
         colour: "White",
         country: "South Africa",
         year: "2016",
-        image: "placeholder.jpg",
+        image: "mancheninblanc.jpg",
     }
 )
 Wine.create!(
@@ -66,7 +66,7 @@ Wine.create!(
         colour: "White",
         country: "Portugal",
         year: "2016",
-        image: "placeholder.jpg",
+        image: "murosantigosloureiroverde.jpg",
         
     }
 )
@@ -76,7 +76,7 @@ Wine.create!(
         colour: "White",
         country: "Chile",
         year: "2016",
-        image: "placeholder.jpg",
+        image: "costafresca.jpg",
     }
 )
 Wine.create!(
@@ -85,7 +85,7 @@ Wine.create!(
         colour: "White",
         country: "Italy",
         year: "2015",
-        image: "placeholder.jpg",
+        image: "lagiustiniana.jpg",
     }
 )
 Wine.create!(
@@ -94,7 +94,7 @@ Wine.create!(
         colour: "White",
         country: "France",
         year: "2014",
-        image: "placeholder.jpg",
+        image: "trimbachriesling.jpg",
     }
 )
 Wine.create!(
@@ -103,7 +103,7 @@ Wine.create!(
         colour: "White",
         country: "France",
         year: "2016",
-        image: "placeholder.jpg",
+        image: "vouvray.jpg",
     }
 )
 Wine.create!(
@@ -112,7 +112,7 @@ Wine.create!(
         colour: "White",
         country: "Greece",
         year: "2016",
-        image: "placeholder.jpg",
+        image: "5dbb0e697f920828fab3a9f659c809d6_w600_h800.jpg",
     }
 )
 Wine.create!(
@@ -121,7 +121,7 @@ Wine.create!(
         colour: "White",
         country: "France",
         year: "2015",
-        image: "placeholder.jpg",
+        image: "vinblanc.jpg",
     }
 )
 Wine.create!(
@@ -130,7 +130,7 @@ Wine.create!(
         colour: "White",
         country: "New Zealand",
         year: "2014",
-        image: "placeholder.jpg",
+        image: "neudorfnelsonchardonnay.jpg",
     }
 )
 Wine.create!(
@@ -139,7 +139,7 @@ Wine.create!(
         colour: "White",
         country: "Austria",
         year: "2016",
-        image: "placeholder.jpg",
+        image: "1842.jpg",
     }
 )
 Wine.create!(
@@ -148,7 +148,7 @@ Wine.create!(
         colour: "Red",
         country: "Australia",
         year: "2014",
-        image: "placeholder.jpg",
+        image: "parker.jpeg",
     }
 )
 Wine.create!(
@@ -166,7 +166,7 @@ Wine.create!(
         colour: "Red",
         country: "Spain",
         year: "2010",
-        image: "placeholder.jpg",
+        image: "6751827.jpeg",
     }
 )
 Wine.create!(
@@ -175,25 +175,17 @@ Wine.create!(
         colour: "Red",
         country: "Australia",
         year: "2015",
-        image: "placeholder.jpg",
+        image: "download.jpeg",
     }
 )
-Wine.create!(
-     {
-        name: "Duca di Sasseta Vino Nobile di Montepulciano Reserva",
-        colour: "Red",
-        country: "Italy",
-        year: "2011",
-        image: "placeholder.jpg",
-    }
-)
+
 Wine.create!(
      {
         name: "Primarius Oregon Pinot Noir",
         colour: "Red",
         country: "USA",
         year: "2011",
-        image: "placeholder.jpg",
+        image: "Primarius.jpg",
     }
 )
 Wine.create!(
@@ -202,7 +194,7 @@ Wine.create!(
         colour: "Red",
         country: "Spain",
         year: "2011",
-        image: "placeholder.jpg",
+        image: "lagunilla.jpg",
     }
 )
 Wine.create!(
@@ -211,7 +203,7 @@ Wine.create!(
         colour: "Red",
         country: "France",
         year: "2015",
-        image: "placeholder.jpg",
+        image: "IDShot.jpg",
     }
 )
 Wine.create!(
@@ -220,7 +212,7 @@ Wine.create!(
         colour: "Red",
         country: "Spain",
         year: "2011",
-        image: "placeholder.jpg",
+        image: "489464.jpg",
     }
 )
 Wine.create!(
@@ -229,7 +221,7 @@ Wine.create!(
         colour: "Red",
         country: "Australia",
         year: "2015",
-        image: "placeholder.jpg",
+        image: "margaretriver.jpeg",
     }
 )
 Wine.create!(
@@ -238,7 +230,7 @@ Wine.create!(
         colour: "Red",
         country: "Uruguay",
         year: "2015",
-        image: "placeholder.jpg",
+        image: "pisano.jpeg",
     }
 )
 Wine.create!(
@@ -247,7 +239,7 @@ Wine.create!(
         colour: "Red",
         country: "Spain",
         year: "2010",
-        image: "placeholder.jpg",
+        image: "remelluri.jpg",
     }
 )
 Wine.create!(
@@ -256,7 +248,7 @@ Wine.create!(
         colour: "Red",
         country: "Argentina",
         year: "2016",
-        image: "placeholder.jpg",
+        image: "altosur.jpg",
     }
 )
 Wine.create!(
@@ -265,7 +257,7 @@ Wine.create!(
         colour: "Red",
         country: "France",
         year: "2013",
-        image: "placeholder.jpg",
+        image: "guigal.jpg",
     }
 )
 Wine.create!(
@@ -274,7 +266,7 @@ Wine.create!(
         colour: "Red",
         country: "Australia",
         year: "2016",
-        image: "placeholder.jpg",
+        image: "yellowtailshiraz.jpg",
     }
 )
 Wine.create!(
@@ -283,7 +275,7 @@ Wine.create!(
         colour: "Rose",
         country: "France",
         year: "2016",
-        image: "placeholder.jpg",
+        image: "minuty.jpeg",
     }
 )
 Wine.create!(
@@ -291,16 +283,8 @@ Wine.create!(
         name: "Domaine La Chautarde",
         colour: "Rose",
         country: "France",
-        year: "2016",
-        image: "placeholder.jpg",
+        year: "2013",
+        image: "Domaine.png",
     }
 )
-Wine.create!(
-     {
-        name: "Château de Berne Rosé 2016 Côtes de Provence",
-        colour: "Rose",
-        country: "France",
-        year: "2016",
-        image: "placeholder.jpg",
-    }
-)
+
